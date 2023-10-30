@@ -1,16 +1,10 @@
-import { MyCombobox } from '@/components/MyCombobox'
 import { ReactNode } from 'react'
 
 export default function Home(): ReactNode {
   return (
-    <>
-      <header className="text-center text-white py-6 px-2">
-        <h1 className="text-4xl font-bold">My autocomplete</h1>
-        <h2 className="text-xl font-medium">with Next.js + HeadlessUI</h2>
-      </header>
-      <main className="grid justify-center">
-        <MyCombobox />
-      </main>
-    </>
+    <main className="grid justify-center text-center text-sky-900 py-4">
+      <h3 className="text-4xl font-bold">Hello visitor!</h3>
+      <p>We are waiting for you to select a fruit</p>
+    </main>
   )
 }
