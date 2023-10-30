@@ -8,7 +8,7 @@ const people = [
   'Kenton Towne',
   'Therese Wunsch',
   'Benedict Kessler',
-  'Katelyn Rohan'
+  'Katelyn Rohan',
 ]
 
 export function MyCombobox(): ReactNode {
@@ -19,8 +19,8 @@ export function MyCombobox(): ReactNode {
     query === ''
       ? people
       : people.filter((person) => {
-        return person.toLowerCase().includes(query.toLowerCase())
-      })
+          return person.toLowerCase().includes(query.toLowerCase())
+        })
 
   return (
     <Combobox value={selectedPerson} onChange={setSelectedPerson}>
