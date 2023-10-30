@@ -4,12 +4,13 @@ import { Combobox } from '@headlessui/react'
 import { Fragment, ReactNode, useEffect, useState } from 'react'
 import SelectButtonIcon from './SelectButtonIcon'
 import { Fruit } from '@/types'
-import Link from 'next/link'
+import { getFruits } from '@/services/get-fruits'
+import { useRouter } from 'next/navigation'
 
 export default function MyCombobox(): ReactNode {
   const [fruits, setFruits] = useState<Fruit[]>([])
-  const [selected, setSelected] = useState<Fruit | undefined>(undefined)
   const [query, setQuery] = useState('')
+  const router = useRouter()
 
   const filteredFruits =
     query === ''
@@ -22,19 +23,20 @@ export default function MyCombobox(): ReactNode {
     const abortController = new AbortController()
     const signal = abortController.signal
 
-    fetch('/api/fruits', { signal })
-      .then(async (res) => await res.json())
-      .then((json) => {
-        setFruits(json)
-      })
+    getFruits({ signal })
+      .then((data) => setFruits(data))
       .catch((err) => console.error(err))
 
     return () => abortController.abort()
   }, [])
 
+  const handleSelectChange = (fruit: Fruit): void => {
+    router.push(`/${fruit.name}`)
+  }
+
   return (
     <div className="relative text-black w-min">
-      <Combobox defaultValue={selected} onChange={setSelected}>
+      <Combobox onChange={handleSelectChange}>
         <Combobox.Label className="block text-white py-1 text-center">
           Select a fruit
         </Combobox.Label>
@@ -65,12 +67,11 @@ export default function MyCombobox(): ReactNode {
                   const activeClassNames = active ? 'bg-gray-100' : ''
                   const selectedClassNames = selected ? 'bg-cyan-100 text-cyan-700' : ''
                   return (
-                    <Link
+                    <li
                       className={`block ${activeClassNames} ${selectedClassNames} py-2 px-4 cursor-pointer`}
-                      href={`/${fruit.name}`}
                     >
                       {fruit.name}
-                    </Link>
+                    </li>
                   )
                 }}
               </Combobox.Option>
