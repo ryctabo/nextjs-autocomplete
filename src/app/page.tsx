@@ -11,7 +11,9 @@ export default function Home() {
           with Next.js + HeadlessUI
         </h2>
       </header>
-      <MyCombobox />
+      <main className="grid justify-center">
+        <MyCombobox />
+      </main>
     </>
   )
 }
