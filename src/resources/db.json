@@ -1,0 +1,79 @@
+{
+  "fruits": [
+    {
+      "id": "a1b9c8d7-e6f5-4g3h-2i1j-098765432101",
+      "name": "Apple",
+      "color": "#FF0000"
+    },
+    {
+      "id": "b2c8d1e9-a0f7-4g6h-3i5j-123456789012",
+      "name": "Banana",
+      "color": "#FFFF00"
+    },
+    {
+      "id": "c3d5e6f7-a8b9-1g2h-4i0j-210987654321",
+      "name": "Orange",
+      "color": "#FFA500"
+    },
+    {
+      "id": "d4e7f2g6-a5b3-0c1h-9i8j-109876543210",
+      "name": "Grapes",
+      "color": "#800080"
+    },
+    {
+      "id": "e5f9g2h4-a3b1-7c8d-6i0j-987654321012",
+      "name": "Strawberry",
+      "color": "#FF0000"
+    },
+    {
+      "id": "f6g3h2i1-j098-7k6l-5m4n-543210987654",
+      "name": "Watermelon",
+      "color": "#228B22"
+    },
+    {
+      "id": "g7h4i3j5-k2l1-9m0n-8o6p-876543210987",
+      "name": "Pineapple",
+      "color": "#FFD700"
+    },
+    {
+      "id": "h8i5j6k4-l3m2-0n1o-9p8q-765432109876",
+      "name": "Blueberry",
+      "color": "#0000FF"
+    },
+    {
+      "id": "i9j2k1l3-m4n5-8o7p-6q9r-654321098765",
+      "name": "Mango",
+      "color": "#FFA500"
+    },
+    {
+      "id": "j0k3l4m6-n7o8-1p2q-5r9s-543210987654",
+      "name": "Cherry",
+      "color": "#FF0000"
+    },
+    {
+      "id": "k1l2m3n4-o5p6-7q8r-9s0t-432109876543",
+      "name": "Kiwi",
+      "color": "#8DB600"
+    },
+    {
+      "id": "l2m3n4o5-p6q7-8r9s-0t1u-321098765432",
+      "name": "Peach",
+      "color": "#FFDAB9"
+    },
+    {
+      "id": "m3n4o5p6-q7r8-9s0t-1u2v-210987654321",
+      "name": "Pear",
+      "color": "#D1E231"
+    },
+    {
+      "id": "n4o5p6q7-r8s9-0t1u-2v3w-098765432109",
+      "name": "Plum",
+      "color": "#580F41"
+    },
+    {
+      "id": "o5p6q7r8-s9t0-1u2v-3w4x-987654321098",
+      "name": "Lemon",
+      "color": "#F8DE7E"
+    }
+  ]
+}
