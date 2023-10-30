@@ -1,7 +1,7 @@
 'use client'
 
 import { Combobox } from '@headlessui/react'
-import { ReactNode, useState } from 'react'
+import { Fragment, ReactNode, useState } from 'react'
 
 const people = [
   'Durward Reynolds',
@@ -24,11 +24,25 @@ export function MyCombobox(): ReactNode {
 
   return (
     <Combobox value={selectedPerson} onChange={setSelectedPerson}>
-      <Combobox.Input onChange={(event) => setQuery(event.target.value)} />
-      <Combobox.Options>
+      <Combobox.Input
+        autoComplete="off"
+        className="py-2 px-4 rounded shadow shadow-black/40 focus:outline-none"
+        onChange={(event) => setQuery(event.target.value)}
+      />
+      <Combobox.Options className="bg-white mt-2 py-1 rounded shadow shadow-black/30">
         {filteredPeople.map((person) => (
-          <Combobox.Option key={person} value={person}>
-            {person}
+          <Combobox.Option key={person} value={person} as={Fragment}>
+            {({ active, selected }) => {
+              const activeClassNames = active ? 'bg-gray-100' : ''
+              const selectedClassNames = selected ? 'bg-cyan-100 text-cyan-700' : ''
+              return (
+                <li
+                  className={`${activeClassNames} ${selectedClassNames} py-2 px-4 cursor-pointer`}
+                >
+                  {person}
+                </li>
+              )
+            }}
           </Combobox.Option>
         ))}
       </Combobox.Options>
